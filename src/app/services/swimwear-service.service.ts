@@ -15,6 +15,10 @@ export class SwimwearServiceService {
     return this.swimwears.slice();
   }
 
+  getSwimwearById( id: string) : SwimWear{
+    return this.swimwears.filter( (swimwear) => ( swimwear.id === id ))[0];
+  }
+
   getFeaturedSwimwear(): SwimWear{
     return this.swimwears.filter( (swimwear) => ( swimwear.featured ) )[0];
   }

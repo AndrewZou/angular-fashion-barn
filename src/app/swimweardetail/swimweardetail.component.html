@@ -22,20 +22,21 @@
         <mat-card-actions>
           <button mat-button>LIKE</button>
           <button mat-button>SHARE</button>
+          <button mat-button (click)="goBack()">BACK</button>
         </mat-card-actions>
       </mat-card>
       </div>
     </div>
 
   <div fxFlex="40">
-    <div fxFlex *ngIf="comments">
+    <div fxFlex *ngIf="selectedSwimwear.comments">
       <mat-card>
         <mat-card-header>
           <mat-card-title>
             <h3>{{"Comments"}}</h3>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content *ngFor="let comment of comments">
+        <mat-card-content *ngFor="let comment of selectedSwimwear.comments">
           <p>
             {{comment.comment}} <br/>
             {{comment.rating + ' stars'}} <br/>

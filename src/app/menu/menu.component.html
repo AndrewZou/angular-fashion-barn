@@ -11,7 +11,7 @@
 
   <div fxFlex>
     <mat-grid-list cols="2" rowHeight="200px">
-      <mat-grid-tile *ngFor="let swimwear of swimwears" (click)="selectSwimwear(swimwear)">
+      <mat-grid-tile *ngFor="let swimwear of swimwears" [routerLink]="['/swimweardetail', swimwear.id]">
         <img height="200px" src={{swimwear.image}} alt={{swimwear.name}}>
         <mat-grid-tile-footer>
           <h1 matLine> {{swimwear.name | uppercase}} </h1>
@@ -19,8 +19,8 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-<div>
+<!-- <div>
   <app-swimweardetail [mySwimwear]="selectedSwimwear"></app-swimweardetail>
-</div>
+</div> -->
 
 
