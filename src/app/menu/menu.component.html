@@ -1,0 +1,26 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Menu</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let swimwear of swimwears" (click)="selectSwimwear(swimwear)">
+        <img height="200px" src={{swimwear.image}} alt={{swimwear.name}}>
+        <mat-grid-tile-footer>
+          <h1 matLine> {{swimwear.name | uppercase}} </h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+<div>
+  <app-swimweardetail [mySwimwear]="selectedSwimwear"></app-swimweardetail>
+</div>
+
+
